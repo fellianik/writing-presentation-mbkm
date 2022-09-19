@@ -1,3 +1,3 @@
-# writing presentation mbkm
+# Writing Presentation
 
-[Week 1](writing-presentation-mbkm/week1.md)
+[Week 1](https://github.com/fellianik/writing-presentation-mbkm/blob/main/week1.md)
