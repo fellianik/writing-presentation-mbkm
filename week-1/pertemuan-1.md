@@ -8,4 +8,11 @@
 - **Terminal Emulator** adalah aplikasi untuk mengakses CLI
 
 ## File System
-- 
+- Mengatur bagaimana data disimpan di dalam sebuah system
+- Window dan unix-like menyusun file dan direktori menggunakan struktur yang bentuknya mirip tree
+
+## Command
+### Navigasi
+- `pwd` => _print working directory_ = melihat sekarang berada di directory apa
+- `ls` =>  = melihat isi directory
+- `cd <direktory>` => = berpindah direktory
