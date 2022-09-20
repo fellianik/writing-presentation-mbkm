@@ -97,8 +97,8 @@ git config --list
 
 :warning: email yang disetup HARUS SAMA dengan yang digunakan pada GITHUB :warning:
 
-## Membuat Project
-### Pasang Git di Project
+
+## Pasang Git di Project
 ```bash
 # Jika folder sudah dibuat
 git init
@@ -108,7 +108,7 @@ git init <new-folder-name>
 ```
 > `git init` hanya digunakan satu kali pada sebuah folder / repositori
 
-### Melacak Perubahan
+## Melacak Perubahan
 ```bash
 git status
 ```
@@ -116,23 +116,23 @@ git status
 
 ____
 
-### Kondisi File pada Git
+## Kondisi File pada Git
 [IMAGE]()
 
-- #### Untracked
+- ### Untracked
 
-- #### Modified
+- ### Modified
 Modified adalah kondisi dimana revisi atau perubahan sudah dilakukan, tetapi belum ditandai (untracked) dan belum disimpan dalam version control.
 
-- #### Staged
+- ### Staged
 Staged adalah kondisi dimana revisi sudah ditandai (modified) namun belum disimpan di version control.
 
-- #### Commited
+- ### Commited
 Commit/committed adalah kondisi dimana revisi sudah disimpan pada version control.
 
 ____
 
-### Menandai Perubahan
+## Menandai Perubahan
 ```bash
 # Salah satu File
 git add <file-name>
@@ -141,14 +141,14 @@ git add <file-name>
 git add .
 ```
 
-### Menambah Keterangan Perubahan dan Menyimpan Perubahan
+## Menambah Keterangan Perubahan dan Menyimpan Perubahan
 ```bash
 git commit -m "...."
 ```
 
 > Ketika mengalami perubahan secara terus menerus maka melakukan `git add .` dan `git commit`
 
-### Melihat Hasil Commit
+## Melihat Hasil Commit
 ```bash
 git log
 # ATAU
@@ -165,27 +165,28 @@ ____
     `git log --author='...'`
 ____
 
-### Mengecek Perubahan
+## Mengecek Perubahan
 ```bash
 git diff
 ```
 
-### Mengembalikan keadaan perubahan
-#### Membatalkan Perubahan - Belum Stagged dan Belum Commited
+## Mengembalikan keadaan perubahan
+### Membatalkan Perubahan - Belum Stagged dan Belum Commited
 ```bash
 git checkout <file-name>
 ```
 
-#### Membatalkan Perubahan - Sudah Stagged namun Belum Commited
+### Membatalkan Perubahan - Sudah Stagged namun Belum Commited
 > Stagged = sudah di `git add`
 ```bash
 git reset <file-name>
 ```
 
-#### Membatalkan Perubahan - Sudah Commited
+### Membatalkan Perubahan - Sudah Commited
+xxxx
 
-
-##### Case Tertentu
+____
+### Case Tertentu
 1. Mengembalikan commit hanya pada file tertentu 
 ```bash
 # menggunakan git checkout
@@ -204,8 +205,9 @@ git checkout <nomor-commit>
 ```bash
 git checkout HEAD~3 <file-name>
 ```
+____
 
-#### Git Revert
+### Git Revert
 GIT Revert akan membatalkan semua perubahan yang ada tanpa menghapus commit terakhir. Jika menggunakan GIT Reset, commit terakhir akan hilang.
 ```bash
 git revert -n <nomor-commit>
