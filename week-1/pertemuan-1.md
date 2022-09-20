@@ -17,10 +17,10 @@
 - `ls` => _lists_ = melihat isi directory
 - `cd <direktory>` => _change directory_ = berpindah direktory
 
-'''
-<!-- Berpindah ke folder folder-name -->
+```bash
+# <!-- Berpindah ke folder folder-name -->
 cd folder-name
 
-<!-- Kembali ke directory sebelumnya -->
+# <!-- Kembali ke directory sebelumnya -->
 cd .. 
-'''
+```
