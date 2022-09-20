@@ -16,6 +16,7 @@
 - `pwd` => _print working directory_ = melihat sekarang berada di directory apa
 - `ls` => _lists_ = melihat isi directory
 - `cd <direktory>` => _change directory_ = berpindah direktory
+
 '''
 <!-- Berpindah ke folder folder-name -->
 cd folder-name
