@@ -155,6 +155,7 @@ git log
 git log --oneline
 ```
 
+____
 **Melihat log bisa dari berbagai sisi.**
 1. Melihat log menggunakan nomor version/commit
     `git log <nomor-version||commit>`
@@ -162,6 +163,7 @@ git log --oneline
     `git log <file-name>`
 3. Melihat log berdasarkan author
     `git log --author='...'`
+____
 
 ### Mengecek Perubahan
 ```bash
