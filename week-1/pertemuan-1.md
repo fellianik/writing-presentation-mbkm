@@ -70,6 +70,138 @@ _move_
 - `mv -r <folder-name>` directory_- memindahkan directory / folder
 
 _remove_
-- `rm <file-name>` _remove_ - menghapus file
+- `rm <file-name>` - menghapus file
 - `rm -r <folder-name>` _directory_ - menghapus directory / folder
 - `rm -rf <folder-name>` _directory force_ - menghapus directory secara paksa
+
+
+# Module 2 : Git & Github
+
+GIT merupakan version control system. Git adalah aplikasi yang dapat melacak setiap perubahan yang terjadi pada suatu folder atau file.
+
+## Instalasi Git
+```bash
+# Cek Instalasi
+git --version
+```
+
+## Setup Awal Git
+```bash
+# SETUP AWAL
+git config --global user.name "nama kalian"
+git config --global user.email "email kalian"
+
+# CEK SETUP
+git config --list
+```
+
+:warning: email yang disetup HARUS SAMA dengan yang digunakan pada GITHUB :warning:
+
+## Membuat Project
+### Pasang Git di Project
+```bash
+# Jika folder sudah dibuat
+git init
+
+# Jika folder baru
+git init <new-folder-name>
+```
+> `git init` hanya digunakan satu kali pada sebuah folder / repositori
+
+### Melacak Perubahan
+```bash
+git status
+```
+> Perubahan = penambahan, penghapusan, pengeditan file / folder
+
+### 3 Kondisi File pada Git
+[IMAGE]()
+
+#### Untracked
+
+#### Modified
+Modified adalah kondisi dimana revisi atau perubahan sudah dilakukan, tetapi belum ditandai (untracked) dan belum disimpan dalam version control.
+
+#### Staged
+Staged adalah kondisi dimana revisi sudah ditandai (modified) namun belum disimpan di version control.
+
+#### Commited
+Commit/committed adalah kondisi dimana revisi sudah disimpan pada version control.
+
+### Menandai Perubahan
+```bash
+# Salah satu File
+git add <file-name>
+
+# Semua file
+git add .
+```
+
+### Menambah Keterangan Perubahan dan Menyimpan Perubahan
+```bash
+git commit -m "...."
+```
+
+> Ketika mengalami perubahan secara terus menerus maka melakukan `git add .` dan `git commit`
+
+### Melihat Hasil Commit
+```bash
+git log
+# ATAU
+git log --oneline
+```
+
+**Melihat log bisa dari berbagai sisi.**
+1. Melihat log menggunakan nomor version/commit
+    `git log <nomor-version||commit>`
+2. Melihat log file tertentu
+    `git log <file-name>`
+3. Melihat log berdasarkan author
+    `git log --author='...'`
+
+### Mengecek Perubahan
+```bash
+git diff
+```
+
+### Mengembalikan keadaan perubahan
+#### Membatalkan Perubahan - Belum Stagged dan Belum Commited
+```bash
+git checkout <file-name>
+```
+
+#### Membatalkan Perubahan - Sudah Stagged namun Belum Commited
+> Stagged = sudah di `git add`
+```bash
+git reset <file-name>
+```
+
+#### Membatalkan Perubahan - Sudah Commited
+
+
+##### Case Tertentu
+1. Mengembalikan commit hanya pada file tertentu 
+```bash
+# menggunakan git checkout
+git checkout <nomor-commit file-name>
+
+# menggunakan git reset
+git reset <file-name>
+```
+
+2. Mengembalikan commit untuk semua file
+```bash
+git checkout <nomor-commit>
+```
+
+3. Jika ingin mengembalikan commit jauh ke bawah. Misal kita ingin kembali pada 3 commit sebelumnya
+```bash
+git checkout HEAD~3 <file-name>
+```
+
+#### Git Revert
+GIT Revert akan membatalkan semua perubahan yang ada tanpa menghapus commit terakhir. Jika menggunakan GIT Reset, commit terakhir akan hilang.
+```bash
+git revert -n <nomor-commit>
+```
+
