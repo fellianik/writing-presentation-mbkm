@@ -13,10 +13,15 @@
 
 ## Command
 ### Navigasi
-- `pwd` _print working directory_ - melihat nama directory sekarang 
-- `ls` _lists_ - melihat isi directory
+_print working directory_ 
+- `pwd`- melihat nama directory sekarang 
+
+_lists_
+- `ls` - melihat isi directory
 - `ls -al` - melihat isi directory beserta hidden files
-- `cd <directory>` _change directory_ - untuk pindah directory
+
+_change directory_
+- `cd <directory>` - untuk pindah directory
 
 ```bash
 # Contoh Penggunaan
@@ -35,11 +40,11 @@ cd ~
 - `mkdir <folder-name>` - membuat sebuah directory / folder
 
 ### Membuka File
-- `nano <file-name> - membuka file di CLI
-- `<app-name> <file-name> - membuka file dengan aplikasi yang ditentukan
+- `nano <file-name>` - membuka file di CLI
+- `<app-name> <file-name>` - membuka file dengan aplikasi yang ditentukan
 
 ### Menulis Text di Dalam File Menggunakan CLI
-- `echo "....."`
+- `echo "....." > <file-name>` - menuliskan text di CLI dan disimpan ke dalam file 
 
 ### Melihat Isi File
 - `head <file-name>` - melihat beberapa line awal dari isi file (default = 10 baris pertama)
@@ -54,12 +59,17 @@ head -9 file-name
 ```
 
 ### Menyalin, Memindahkan, dan Menghapus files & directory
-- `cp <source_file> <destination_file>` _copy_ - menyalin file ke directory yang berbeda
-- `cp <file-name> <copy-file-name>` _copy_ - menyalin file di directory yang sama
-- `cp -r <folder-name>` _copy directory_ - menyalin directory / folder
-- `mv <old-file-name> <new-file-name>` _move_ - mengubah nama file dan file berada di directory yang tetap
-- `mv <nama-file-yang-dipindah> <tujuan-pindah/nama-file(bisa_baru||lama)>` _move_ - memindahkan file ke directory lain sekaligus mengubah nama
-- `mv -r <folder-name>` _move directory_ - memindahkan directory / folder
+_copy_ 
+- `cp <source_file> <destination_file>` - menyalin file ke directory yang berbeda
+- `cp <file-name> <copy-file-name>` - menyalin file di directory yang sama
+- `cp -r <folder-name>` _directory_- menyalin directory / folder
+
+_move_
+- `mv <old-file-name> <new-file-name>` - mengubah nama file dan file berada di directory yang tetap
+- `mv <nama-file-yang-dipindah> <tujuan-pindah/nama-file(bisa_baru||lama)>` - memindahkan file ke directory lain sekaligus mengubah nama
+- `mv -r <folder-name>` directory_- memindahkan directory / folder
+
+_remove_
 - `rm <file-name>` _remove_ - menghapus file
-- `rm -r <folder-name>` _remove directory_ - menghapus directory / folder
-- `rm -rf <folder-name>` _remove directory force_ - menghapus directory secara paksa
+- `rm -r <folder-name>` _directory_ - menghapus directory / folder
+- `rm -rf <folder-name>` _directory force_ - menghapus directory secara paksa
