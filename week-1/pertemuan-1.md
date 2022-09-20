@@ -18,9 +18,10 @@
 - `cd <direktory>` => _change directory_ = berpindah direktory
 
 ```bash
-# <!-- Berpindah ke folder folder-name -->
+# Contoh Penggunaan
+# Berpindah ke folder folder-name
 cd folder-name
 
-# <!-- Kembali ke directory sebelumnya -->
+# Kembali ke directory sebelumnya
 cd .. 
 ```
