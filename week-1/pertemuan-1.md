@@ -213,3 +213,10 @@ GIT Revert akan membatalkan semua perubahan yang ada tanpa menghapus commit tera
 git revert -n <nomor-commit>
 ```
 
+## Upload ke Github
+```bash
+git remote add origin <link resporitory>
+git push -u origin main
+```
+
+> `git remote` dilakukan sekali
