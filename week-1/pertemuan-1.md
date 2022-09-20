@@ -34,9 +34,7 @@ cd ..
 ### Melihat Isi File
 - `head <file-name>` - melihat beberapa line awal dari isi file (default = 10 baris pertama)
 - `tail <file-name>` - melihat beberapa line akhir dari isi file (default = 10 baris terakhir)
-- `cat <file-name> - melihat isi file (secara keseluruhan)
+- `cat <file-name>` - melihat isi file (secara keseluruhan)
 
-<aside>
-`head -(jumlah baris yang mau ditampilkan) <namafile>` 
-contoh : `head -9 nama-file` - akan menampilkan 9 baris pertama.
-</aside>
+> `head -(jumlah baris yang mau ditampilkan) <namafile>` 
+> contoh : `head -9 nama-file` - akan menampilkan 9 baris pertama.
