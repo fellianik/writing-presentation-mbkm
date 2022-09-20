@@ -114,19 +114,23 @@ git status
 ```
 > Perubahan = penambahan, penghapusan, pengeditan file / folder
 
-### 3 Kondisi File pada Git
+____
+
+### Kondisi File pada Git
 [IMAGE]()
 
-#### Untracked
+- #### Untracked
 
-#### Modified
+- #### Modified
 Modified adalah kondisi dimana revisi atau perubahan sudah dilakukan, tetapi belum ditandai (untracked) dan belum disimpan dalam version control.
 
-#### Staged
+- #### Staged
 Staged adalah kondisi dimana revisi sudah ditandai (modified) namun belum disimpan di version control.
 
-#### Commited
+- #### Commited
 Commit/committed adalah kondisi dimana revisi sudah disimpan pada version control.
+
+____
 
 ### Menandai Perubahan
 ```bash
