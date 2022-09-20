@@ -117,7 +117,7 @@ git status
 ____
 
 ## Kondisi File pada Git
-[IMAGE]()
+![IMAGE](/week-1/assets/kondisi-file-git.jpeg)
 
 - ### Untracked
 
@@ -212,6 +212,11 @@ GIT Revert akan membatalkan semua perubahan yang ada tanpa menghapus commit tera
 ```bash
 git revert -n <nomor-commit>
 ```
+
+### Perbedaan `git checkout`, `git reset`, git revert
+![Git checkout](/week-1/assets/git-checkoute.jpeg)
+![Git reset](/week-1/assets/git-reset.jpeg)
+![Git revert](/week-1/assets/git-revert.jpeg)
 
 ## Upload ke Github
 ```bash
