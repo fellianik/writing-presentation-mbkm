@@ -214,9 +214,12 @@ git revert -n <nomor-commit>
 ```
 
 ### Perbedaan `git checkout`, `git reset`, `git revert`
-<img src="/week-1/assets/git-checkoute.jpeg" width="250">
-<img src="/week-1/assets/git-reset.jpeg" width="250">
-<img src="/week-1/assets/git-revert.jpeg" width="250">
+`git checkout`:
+<img src="/week-1/assets/git-checkoute.jpeg" width="300">
+`git reset`:
+<img src="/week-1/assets/git-reset.jpeg" width="300">
+`git revert`
+<img src="/week-1/assets/git-revert.jpeg" width="300">
 
 ## Upload ke Github
 ```bash
