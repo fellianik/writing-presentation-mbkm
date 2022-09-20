@@ -36,5 +36,6 @@ cd ..
 - `tail <file-name>` - melihat beberapa line akhir dari isi file (default = 10 baris terakhir)
 - `cat <file-name>` - melihat isi file (secara keseluruhan)
 
-> `head -(jumlah baris yang mau ditampilkan) <namafile>` 
-> contoh : `head -9 nama-file` - akan menampilkan 9 baris pertama.
+<p class="callout info">`head -(jumlah baris yang mau ditampilkan) <namafile>` 
+
+contoh : `head -9 nama-file` - akan menampilkan 9 baris pertama. </p>
