@@ -1,4 +1,4 @@
-# Pertemuan 2 : 26 - 30 September 2022
+# Minggu 2 : 26 - 30 September 2022
 
 ----
 
