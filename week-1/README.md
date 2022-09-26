@@ -1,4 +1,4 @@
-# Minggu 1 - 19 - 23 September 2022
+# Minggu 1 : 19 - 23 September 2022
 
 ---
 
