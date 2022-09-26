@@ -90,6 +90,8 @@
 | `rm -r <folder-name>`  | menghapus directory / folder     |
 | `rm -rf <folder-name>` | menghapus directory secara paksa |
 
+---
+
 # Module 2 - Git & Github Dasar
 
 -   Git merupakan version control system.
@@ -267,7 +269,7 @@ git diff
     git checkout HEAD~3 <file-name>
     ```
 
-### Git Revert
+#### Git Revert
 
 Git revert akan membatalkan semua perubahan yang ada tanpa menghapus commit terakhir. Jika menggunakan git reset, commit terakhir akan hilang.
 
@@ -299,6 +301,8 @@ git push -u origin main
 git clone <link_repository>
 ```
 
+---
+
 # Module 3 - HTML
 
 -   HTML adalah singkatan dari Hypertext Markup Language.
@@ -310,7 +314,7 @@ git clone <link_repository>
 -   Browser (Chrome, Edge, Mozilla, dkk)
 -   Text / Code Editor (VS Code, Sublime text, notepad++, atom, dkk)
 
-## HTML Structure
+### HTML Structure
 
 ```html
 <!DOCTYPE html>
@@ -327,7 +331,7 @@ git clone <link_repository>
 </html>
 ```
 
-## HTML Anatomy
+### HTML Anatomy
 
 ```html
 <p>This is Paragraph</p>
@@ -342,7 +346,7 @@ git clone <link_repository>
 | `</p>`            | Closing tag |
 | `<p></p>`         | Element     |
 
-## HTML Element
+### HTML Element
 
 HTML element didefinisikan sebagai opening tag, content, dan closing tag.
 
@@ -358,7 +362,7 @@ contoh:
 </body>
 ```
 
-## HTML Attributes
+### HTML Attributes
 
 Attribute adalah properties dari sebuah HTML Element.
 Semua HTML Element memiliki attribute.
@@ -384,16 +388,16 @@ contoh:
 </body>
 ```
 
-## HTML Comment
+### HTML Comment
 
-- Comment tidak akan dieksekusi oleh sistem.
-- Comment hanya untuk dibaca oleh sesama programmer.
+-   Comment tidak akan dieksekusi oleh sistem.
+-   Comment hanya untuk dibaca oleh sesama programmer.
 
 ```html
 <!-- Ini adalah syntax Comment pada HTML -->
 ```
 
-## Tag Image
+### Tag Image
 
 ```html
 <img src="#" alt="xxx" />
@@ -407,7 +411,7 @@ contoh:
 | `src` _source_     | atribut untuk memberitahukan sumber gambar                         |
 | `alt` _altenative_ | atribut yang menjadi penjelas dari gambar jika gambar tidak muncul |
 
-## Tag Video
+### Tag Video
 
 ```html
 <video controls>
@@ -422,7 +426,7 @@ contoh:
 | `<video></video>` | Element image                                               |
 | `control`         | untuk mengatur videonya di play / pause dan indikator menit |
 
-## HTML Table
+### HTML Table
 
 ```html
 <body>
@@ -455,7 +459,7 @@ contoh:
 </body>
 ```
 
-## HTML Form
+### HTML Form
 
 ```html
 <body>
@@ -481,7 +485,7 @@ contoh:
 </body>
 ```
 
-## Semantic HTML
+### Semantic HTML
 
 -   Semantic artinya penggunaan element HTML yang sesuai dengan kebutuhan konten
 -   HTML semantic:
@@ -503,7 +507,7 @@ contoh:
     -   Meningkatkan SEO
     -   Lebih mudah di maintain
 
-## Deploy HTML
+### Deploy HTML
 
 -   Deploy adalah sebuah proses untuk menyebarkan aplikasi yang sudah kita kerjakan supaya bisa digunakan oleh orang-orang
 -   Cara mendeploy HTML di [Netlify.com](netlify.com):
@@ -517,8 +521,251 @@ contoh:
     -   Tunggu dan Selesai. Nanti akan muncul url websitenya
     -   Untuk mengubah nama website, bisa ke **Deploy Setting** -> **Change site name**
 
+---
+
 # Module 4 - CSS
+
+-   CSS adalah
+-   xxx
+
+### CSS Structure
+
+```css
+selector {
+    property: value;
+}
+```
+
+### CSS Comment
+
+```css
+/* Ini adalah syntax comment pada CSS */
+/* 
+Ini adalah syntax multiple line
+*/
+```
+
+### Penyisipan CSS ke dalam HTML
+
+-   **Inline Styles**
+
+    Inline styles adalah menambahkan CSS pada atribut HTML
+
+    ```html
+    <p style="color: coral; font-size: 90px;">Ini adalah paragraf yang menggunakan inline styles</p>
+    ```
+
+-   **Tag `<style></style>`**
+
+    Tag `<style></style>` bisa dibuat pada file HTML dan diletakkan pada `<head></head>`
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Document</title>
+            <style>
+                p {
+                    color: aqua;
+                }
+            </style>
+        </head>
+        <body>
+            <p>Ini adalah paragraf</p>
+        </body>
+    </html>
+    ```
+
+-   **Eksternal CSS (.css)**
+
+    Jika membutuhkan banyak code pada CSS, untuk memisahkan code CSS di file tersendiri (extension .css) dan terpisah dari file HTML.
+
+    File HTML `index.html`:
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Document</title>
+            <link rel="stylesheet" href="style.css" />
+        </head>
+        <body>
+            <p>Ini adalah paragraf</p>
+        </body>
+    </html>
+    ```
+
+    File CSS `style.css`:
+
+    ```css
+    p {
+        color: aqua;
+    }
+    ```
+
+### CSS - Tag Name
+
+-   Tag Elemen HTML secara langsung pada CSS.
+-   Jika menggunakan Tag Element, maka ini bersifat global.
+-   Global artinya akan mempengaruhi seluruh Tag Elemen HTML yang ada pada file tersebut
+-   **Ditulis dengan nama tag HTML itu sendiri**
+
+```css
+p {
+    color: aqua;
+}
+```
+
+### CSS - Class Name
+
+-   Attribute class pada elemen HTML lalu memanggil nama class tersebut pada CSS
+-   HTML yang memiliki class yang sama, akan mempunyai styling yang sama saat digunakan pada CSS
+-   **Ditulis dengan menggunakan dot (.) beserta nama classnya**
+
+```css
+.title {
+    color: aqua;
+}
+```
+
+### CSS - Mutiple Class
+
+-   Penulisan nama class bisa lebih dari 1 dalam 1 element HTML
+
+Contoh:
+
+`index.html`
+
+```html
+<body>
+    <h1 class="title uppercase">Hello My Name is Felli</h1>
+    <h1 class="title lowercase">I'm Informatics Student</h1>
+</body>
+```
+
+`style.css`
+
+```css
+.title {
+    color: red;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.lowercase {
+    text-transform: lowercase;
+}
+```
+
+### CSS - ID Name
+
+-   Digunakan jika hanya ada 1 element pada 1 page.
+-   **Ditulis dengan menggunakan slash (#) beserta nama ID nya**
+
+```css
+#navigation {
+    color: aqua;
+}
+```
+
+#### Perbedaan ID Name dan Class Name
+
+-   Gunakan ID Name jika hanya ada 1 elemen pada file/halaman HTML.
+-   Gunakan Class Name jika akan ada beberapa element HTML yang memiliki styling/desain yang sama.
+
+#### Chaining Selectors
+
+Contoh kasus : Jika kita memiliki 3 tag elemen HTML pada CSS namun kita ingin ada 1 elemen HTML yang memiliki styling berbeda.
+
+Contoh:
+
+`index.html`
+
+```html
+<body>
+    <h1>Hello My Name is Felli</h1>
+    <h1>I'm Informatics Student</h1>
+    <h1 class="profile">About me</h1>
+</body>
+```
+
+`style.css`
+
+```css
+/* Styling berlaku untuk semua elemen dengan tag <h1> */
+h1 {
+    color: red;
+}
+
+/* Styling berlaku pada element dengan tag <h1> yang memiliki class profile */
+h1.profile {
+    color: blue;
+}
+```
+
+### Nested Element
+
+CSS memiliki konsep yaitu setiap element memiliki _parent_ dan _child_
+
+### Hierarki CSS
+
+-   penulisan selector memiliki hierarki di dalam penggunaan CSS.
+-   Hierarkinya dari paling bawah:
+    1. `*` yang berarti semua element
+    2. Element HTML
+    3. Class Name `(.)`
+    4. ID Name `(#)`
+    5. `!important` digunakan untuk meng-override styling sebelumnya.
+
+### Multiple Selector
+
+Contoh:
+
+`style.css`
+
+```css
+h1,
+p {
+    color: red;
+}
+```
+
+### Metode Responsive Web menggunakan CSS
+
+### Flexbox CSS
+
+---
 
 # Module 5 - Algorithm & Data Structures
 
+-   Algoritma adalah
+
+### Perbedaan Algoritma dan Struktur Data
+
+### Ciri-ciri Algoritma
+
+### Jenis Proses Algoritma
+
+### Penulisan Algoritma
+
+### Contoh Algoritma
+
+---
+
 # Module 6 - JS Dasar - Intro Javascript pt. 1
+
+-   Javascript adalah
+
+### Cara menjalankan javascript
+
+### Tipe Data Javascript
+
+### Operator
+
+### Conditional
