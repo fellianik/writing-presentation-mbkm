@@ -1,0 +1,524 @@
+# Minggu 1 - 19 - 23 September 2022
+
+---
+
+# Module 1 - UNIX Command Line
+
+### Command Line Interface
+
+-   **Shell** adalah program yang digunakan untuk berkomunikasi atau memerintah sistem
+-   **Command Line Interface** adalah jenis shell yang berbasis teks
+-   **Terminal Emulator** adalah aplikasi untuk mengakses CLI
+
+### Contoh CLI
+
+-   sh
+-   bash
+-   zsh
+-   cmd.exe
+
+### File System
+
+-   Mengatur bagaimana data disimpan di dalam sebuah system
+-   Window dan unix-like menyusun file dan direktori menggunakan struktur yang bentuknya mirip tree
+
+### Command
+
+#### Navigasi
+
+| Command            | Kepanjangan               | Keterangan                                 |
+| ------------------ | ------------------------- | ------------------------------------------ |
+| `pwd`              | _print working directory_ | melihat nama directory sekarang            |
+| `ls`               | _lists_                   | melihat isi directory                      |
+| `ls -al`           |                           | melihat isi directory beserta hidden files |
+| `cd <folder-name>` | _change directory_        | untuk pindah directory                     |
+| `cd ..`            |                           | untuk kembali ke directory sebelumnya      |
+| `cd ~`             |                           | untuk kembali ke home directory            |
+
+#### Membuat File & Directory
+
+| Command                         | Keterangan                        |
+| ------------------------------- | --------------------------------- |
+| `touch <file-name.file-format>` | membuat sebuah file               |
+| `mkdir <folder-name>`           | membuat sebuah directory / folder |
+
+#### Membuka File
+
+| Command                  | Keterangan                                   |
+| ------------------------ | -------------------------------------------- |
+| `nano <file-name>`       | membuka file di CLI                          |
+| `<app-name> <file-name>` | membuka file dengan aplikasi yang ditentukan |
+
+#### Menulis Text di Dalam File Menggunakan CLI
+
+| Command                      | Keterangan                                        |
+| ---------------------------- | ------------------------------------------------- |
+| `echo "....." > <file-name>` | menuliskan text di CLI dan disimpan ke dalam file |
+
+#### Melihat Isi File
+
+| Command                         | Keterangan                                                              |
+| ------------------------------- | ----------------------------------------------------------------------- |
+| `head <file-name>`              | melihat beberapa line awal dari isi file (default = 10 baris pertama)   |
+| `tail <file-name>`              | melihat beberapa line akhir dari isi file (default = 10 baris terakhir) |
+| `cat <file-name>`               | melihat isi file (secara keseluruhan)                                   |
+| `head \|\| tail -n <file-name>` | menampilkan isi file dengan baris yang muncul yaitu n baris             |
+
+#### Menyalin, Memindahkan, dan Menghapus files & directory
+
+**_Copy_**
+
+| Command                               | Keterangan                              |
+| ------------------------------------- | --------------------------------------- |
+| `cp <source_file> <destination_file>` | menyalin file ke directory yang berbeda |
+| `cp <file-name> <copy-file-name>`     | menyalin file di directory yang sama    |
+| `cp -r <folder-name>`                 | menyalin directory / folder             |
+
+**_Move_**
+
+| Command                                                                     | Keterangan                                                 |
+| --------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| `mv <old-file-name> <new-file-name>`                                        | mengubah nama file dan file berada di directory yang tetap |
+| `mv <nama-file-yang-dipindah> <tujuan-pindah/nama-file(bisa_baru\|\|lama)>` | memindahkan file ke directory lain sekaligus mengubah nama |
+| `mv -r <folder-name>`                                                       | memindahkan directory / folder                             |
+
+**_Remove_**
+
+| Command                | Keterangan                       |
+| ---------------------- | -------------------------------- |
+| `rm <file-name>`       | menghapus file                   |
+| `rm -r <folder-name>`  | menghapus directory / folder     |
+| `rm -rf <folder-name>` | menghapus directory secara paksa |
+
+# Module 2 - Git & Github Dasar
+
+-   Git merupakan version control system.
+-   Git adalah aplikasi yang dapat melacak setiap perubahan yang terjadi pada suatu folder atau file.
+
+#### Alasan menggunakan Git dan Github
+
+-   bisa digunakan untuk pengerjaan proyek bersama (kolaborasi) tanpa harus mengcopy paste folder untuk mengupdate perubahan
+-   hasil perubahan pun bisa disimpan secara online sehingga pengerjaan tim bisa tersimpan dan dapat langsung diakses oleh tim
+
+#### Perbedaan Git dan Github
+
+-   **Pengertian:**
+    -   Git merupakan aplikasi berupa version control system.
+    -   Github merupakan layanan cloud
+-   **Fungsi:**
+    -   Git berfungsi untuk mencatat segala perubahan file maupun directory dalam suatu repository project.
+    -   Github berfungsi untuk menyimpan dan mengelola project dan disimpan dalam repository
+-   **Akses:**
+    -   Git dapat diakses secara offline (lokal komputer)
+    -   Github dapat diakses secara online ([Web: Github.com](github.com))
+
+### Instalasi Git
+
+Install software GIT di [https://git-scm.com/](https://git-scm.com/)
+
+```bash
+# Cek Instalasi apakah sudah terpasang di Lokal Komputer
+git --version
+```
+
+### Setup Awal Git
+
+```bash
+# SETUP AWAL
+git config --global user.name "nama kalian"
+git config --global user.email "email kalian"
+
+# CEK SETUP
+git config --list
+```
+
+> :warning: **email yang disetup HARUS SAMA dengan yang digunakan pada GITHUB** :warning:
+
+### Pasang Git di Folder Project
+
+```bash
+# Jika folder sudah dibuat
+git init
+
+# Jika folder baru
+git init <new-folder-name>
+```
+
+> **`git init` hanya digunakan satu kali pada sebuah folder / repositori**
+
+### Melacak Perubahan
+
+```bash
+git status
+```
+
+> Perubahan = penambahan, penghapusan, pengeditan file / folder
+
+---
+
+#### Kondisi File pada Git
+
+![IMAGE](/week-1/kondisi-file-git.jpeg)
+
+-   ### Modified
+
+    Modified adalah kondisi dimana revisi atau perubahan sudah dilakukan, tetapi belum ditandai (untracked) dan belum disimpan dalam version control.
+
+-   ### Staged
+
+    Staged adalah kondisi dimana revisi sudah ditandai (modified) namun belum disimpan di version control.
+
+-   ### Commited
+    Commit/committed adalah kondisi dimana revisi sudah disimpan pada version control.
+
+### Menandai Perubahan
+
+```bash
+# Salah satu File
+git add <file-name>
+
+# Semua file
+git add .
+```
+
+### Menambah Keterangan Perubahan dan Menyimpan Perubahan
+
+```bash
+git commit -m "...."
+```
+
+> **Ketika mengalami perubahan secara terus menerus maka melakukan `git add .` dan `git commit`**
+
+### Melihat Hasil Commit
+
+```bash
+git log
+# ATAU
+git log --oneline
+```
+
+**Melihat log bisa dari berbagai sisi:**
+
+1. Melihat log menggunakan nomor version/commit
+
+    `git log <nomor-version||commit>`
+
+2. Melihat log file tertentu
+
+    `git log <file-name>`
+
+3. Melihat log berdasarkan author
+
+    `git log --author='...'`
+
+### Mengecek Perubahan
+
+```bash
+git diff
+```
+
+### Mengembalikan keadaan perubahan
+
+-   #### Membatalkan Perubahan - Belum Stagged dan Belum Commited
+
+    ```bash
+    git checkout <file-name>
+    ```
+
+-   #### Membatalkan Perubahan - Sudah Stagged namun Belum Commited
+
+    Stagged = sudah di `git add`
+
+    ```bash
+    git reset <file-name>
+    ```
+
+-   #### Membatalkan Perubahan - Sudah Commited
+
+    ```bash
+    # File menjadi staged
+    git checkout <nomor_commit> <file-name>
+
+    # File menjadi modified dan not staged
+    git reset <file-name>
+    ```
+
+#### Case Tertentu
+
+1. Mengembalikan commit hanya pada file tertentu
+
+    ```bash
+    # menggunakan git checkout
+    git checkout <nomor-commit file-name>
+
+    # menggunakan git reset
+    git reset <file-name>
+    ```
+
+2. Mengembalikan commit untuk semua file
+
+    ```bash
+    git checkout <nomor-commit>
+    ```
+
+3. Jika ingin mengembalikan commit jauh ke bawah. Misal kita ingin kembali pada 3 commit sebelumnya
+
+    ```bash
+    git checkout HEAD~3 <file-name>
+    ```
+
+### Git Revert
+
+Git revert akan membatalkan semua perubahan yang ada tanpa menghapus commit terakhir. Jika menggunakan git reset, commit terakhir akan hilang.
+
+```bash
+git revert -n <nomor-commit>
+```
+
+### Perbedaan `git checkout`, `git reset`, `git revert`
+
+<p><code>git checkout</code> : <img src="/week-1/git-checkoute.jpeg" width="300"></p>
+<p><code>git reset</code> : <img src="/week-1/git-reset.jpeg" width="300"></p>
+<p><code>git revert</code> : <img src="/week-1/git-revert.jpeg" width="300"></p>
+
+### Upload ke Github
+
+```bash
+# Melakukan remote dengan repository yang dipilih
+git remote add origin <link_repository>
+
+# Cara menambahkan perubahan ke dalam repository
+git push -u origin main
+```
+
+> **`git remote` dilakukan sekali**
+
+### Clone Repository dari Github ke Local
+
+```bash
+git clone <link_repository>
+```
+
+# Module 3 - HTML
+
+-   HTML adalah singkatan dari Hypertext Markup Language.
+-   HTML digunakan untuk menampilkan konten pada browser.
+-   HTML bersifat statis. HTML hanya bertugas menampilkan konten yang diminta oleh developer.
+
+#### Tools yang dibutuhkan
+
+-   Browser (Chrome, Edge, Mozilla, dkk)
+-   Text / Code Editor (VS Code, Sublime text, notepad++, atom, dkk)
+
+## HTML Structure
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Judul Halaman di Bagian Tab Browser</title>
+    </head>
+    <body>
+        <!-- ISI KONTEN HTML -->
+    </body>
+</html>
+```
+
+## HTML Anatomy
+
+```html
+<p>This is Paragraph</p>
+```
+
+**Keterangan:**
+
+| Element           | Keterangan  |
+| ----------------- | ----------- |
+| `<p>`             | Opening tag |
+| This is Paragraph | Content     |
+| `</p>`            | Closing tag |
+| `<p></p>`         | Element     |
+
+## HTML Element
+
+HTML element didefinisikan sebagai opening tag, content, dan closing tag.
+
+contoh:
+
+```html
+<body>
+    <div>
+        <h1>Ini Heading</h1>
+        <p>Ini Paragraf</p>
+        <a>Ini anchor</a>
+    </div>
+</body>
+```
+
+## HTML Attributes
+
+Attribute adalah properties dari sebuah HTML Element.
+Semua HTML Element memiliki attribute.
+
+contoh:
+
+```html
+<body>
+    <!-- Tag div dengan atribut class -->
+    <div class="header">
+        <!-- Tag h1 dengan atribut class -->
+        <h1 class="heading">Ini Heading</h1>
+
+        <!-- Tag p dengan atribut id -->
+        <p id="paragraf-1">Ini Paragraf</p>
+
+        <!-- Tag img dengan atribut src -->
+        <img scr="#" alt="Gambar" />
+
+        <!-- Tag a dengan atribut href -->
+        <a href="#">Ini anchor</a>
+    </div>
+</body>
+```
+
+## HTML Comment
+
+- Comment tidak akan dieksekusi oleh sistem.
+- Comment hanya untuk dibaca oleh sesama programmer.
+
+```html
+<!-- Ini adalah syntax Comment pada HTML -->
+```
+
+## Tag Image
+
+```html
+<img src="#" alt="xxx" />
+```
+
+**Keterangan:**
+
+| Element            | Keterangan                                                         |
+| ------------------ | ------------------------------------------------------------------ |
+| `<img>`            | Element image                                                      |
+| `src` _source_     | atribut untuk memberitahukan sumber gambar                         |
+| `alt` _altenative_ | atribut yang menjadi penjelas dari gambar jika gambar tidak muncul |
+
+## Tag Video
+
+```html
+<video controls>
+    <source src="movie.mp4" type="video/mp4" />
+</video>
+```
+
+**Keterangan:**
+
+| Element           | Keterangan                                                  |
+| ----------------- | ----------------------------------------------------------- |
+| `<video></video>` | Element image                                               |
+| `control`         | untuk mengatur videonya di play / pause dan indikator menit |
+
+## HTML Table
+
+```html
+<body>
+    <!-- HTML Element untuk table -->
+    <table border="1">
+        <!-- Baris pada tabel -->
+        <tr>
+            <!-- Header Table -->
+            <th>Company</th>
+            <th>Contact</th>
+            <th>Country</th>
+        </tr>
+
+        <!-- Baris pada tabel -->
+        <tr>
+            <!-- Data Tabel baris ke 1 -->
+            <td>John Doe</td>
+            <td>0812345***</td>
+            <td>Indonesia</td>
+        </tr>
+
+        <!-- Baris pada table -->
+        <tr>
+            <!-- Data Tabel baris ke 2 -->
+            <td>Dave Win</td>
+            <td>0812493***</td>
+            <td>Indonesia</td>
+        </tr>
+    </table>
+</body>
+```
+
+## HTML Form
+
+```html
+<body>
+    <!-- HTML element untuk Form -->
+    <form>
+        <!-- Tag element div digunakan untuk membagi section agar lebih rapi dan mudah dibaca -->
+        <div>
+            <label for="username">Username</label> <br />
+            <input type="text" placeholder="Your username" name="username" id="username" />
+        </div>
+        <div>
+            <label for="email">Email</label> <br />
+            <input type="email" placeholder="Your email" name="email" id="email" />
+        </div>
+        <div>
+            <label for="password">password</label> <br />
+            <input type="password" placeholder="Your password" name="password" id="password" />
+        </div>
+        <div>
+            <input type="submit" value="Sign Up" />
+        </div>
+    </form>
+</body>
+```
+
+## Semantic HTML
+
+-   Semantic artinya penggunaan element HTML yang sesuai dengan kebutuhan konten
+-   HTML semantic:
+    -   `<article>`
+    -   `<aside>`
+    -   `<details>`
+    -   `<figcaption>`
+    -   `<figure>`
+    -   `<footer>`
+    -   `<header>`
+    -   `<main>`
+    -   `<mark>`
+    -   `<nav>`
+    -   `<section>`
+    -   `<summary>`
+    -   `<time>`
+-   Kegunaan Semantic HTML:
+    -   Meningkatkan accessibility
+    -   Meningkatkan SEO
+    -   Lebih mudah di maintain
+
+## Deploy HTML
+
+-   Deploy adalah sebuah proses untuk menyebarkan aplikasi yang sudah kita kerjakan supaya bisa digunakan oleh orang-orang
+-   Cara mendeploy HTML di [Netlify.com](netlify.com):
+    -   Daftar Akun
+    -   Sign in
+    -   Add new site di button **New Site from Git**
+    -   Link to your github
+    -   Authorize netlify with github
+    -   Select your repository in github
+    -   Configure your setting
+    -   Tunggu dan Selesai. Nanti akan muncul url websitenya
+    -   Untuk mengubah nama website, bisa ke **Deploy Setting** -> **Change site name**
+
+# Module 4 - CSS
+
+# Module 5 - Algorithm & Data Structures
+
+# Module 6 - JS Dasar - Intro Javascript pt. 1
