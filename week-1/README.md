@@ -1,4 +1,4 @@
-# Minggu 1 : 19 - 23 September 2022
+# Minggu 1 - 19 - 23 September 2022
 
 ---
 
@@ -525,8 +525,8 @@ contoh:
 
 # Module 4 - CSS
 
--   CSS adalah
--   xxx
+-   CSS adalah singkatan dari Cascading Style Sheets
+-   CSS adalah bahasa yang digunakan untuk mendesain halaman website.
 
 ### CSS Structure
 
@@ -535,6 +535,8 @@ selector {
     property: value;
 }
 ```
+
+-   Selector digunakan untuk menunjuk elemen HTML mana yang hendak kita ubah styling-nya menggunakan CSS.
 
 ### CSS Comment
 
@@ -555,7 +557,7 @@ Ini adalah syntax multiple line
     <p style="color: coral; font-size: 90px;">Ini adalah paragraf yang menggunakan inline styles</p>
     ```
 
--   **Tag `<style></style>`**
+-   **Tag `<style></style>` / Internal Styles**
 
     Tag `<style></style>` bisa dibuat pada file HTML dan diletakkan pada `<head></head>`
 
@@ -579,7 +581,7 @@ Ini adalah syntax multiple line
     </html>
     ```
 
--   **Eksternal CSS (.css)**
+-   **External CSS (.css) / External Styles**
 
     Jika membutuhkan banyak code pada CSS, untuk memisahkan code CSS di file tersendiri (extension .css) dan terpisah dari file HTML.
 
@@ -622,6 +624,8 @@ p {
 }
 ```
 
+> Tag `<p></p>` adalah element HTML dan ditulis `p` sebagai selector CSS
+
 ### CSS - Class Name
 
 -   Attribute class pada elemen HTML lalu memanggil nama class tersebut pada CSS
@@ -633,6 +637,8 @@ p {
     color: aqua;
 }
 ```
+
+> Element HTML yang memiliki `class = "title"` akan ditulis `.title` sebagai selector CSS
 
 ### CSS - Mutiple Class
 
@@ -663,6 +669,8 @@ Contoh:
 }
 ```
 
+> Class `uppercase` dan `lowercase` akan memiliki styling yang berbeda walaupun dia di class utama yang sama (`.title`)
+
 ### CSS - ID Name
 
 -   Digunakan jika hanya ada 1 element pada 1 page.
@@ -673,6 +681,8 @@ Contoh:
     color: aqua;
 }
 ```
+
+> Element HTML yang memiliki `id = "navigation"` akan ditulis `#navigation` sebagai selector CSS
 
 #### Perbedaan ID Name dan Class Name
 
@@ -715,13 +725,71 @@ CSS memiliki konsep yaitu setiap element memiliki _parent_ dan _child_
 
 ### Hierarki CSS
 
--   penulisan selector memiliki hierarki di dalam penggunaan CSS.
--   Hierarkinya dari paling bawah:
+-   Penulisan selector memiliki hierarki di dalam penggunaan CSS.
+-   Hierarkinya dari paling bawah sampai paling prioritas:
     1. `*` yang berarti semua element
     2. Element HTML
     3. Class Name `(.)`
     4. ID Name `(#)`
     5. `!important` digunakan untuk meng-override styling sebelumnya.
+
+**Contoh beberapa kasus:**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #special {
+                color: orange;
+            }
+            h1 {
+                color: green;
+            }
+            #special {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="special">This is h1 with id special</h1>
+        <h1>This is h1 without id</h1>
+    </body>
+</html>
+```
+
+> Warna dari tag `h1` dengan id `special` menjadi biru. Hal tersebut dikarenakan styling terakhir adalah style yang akan digunakan.
+
+`styles.css`
+
+```css
+#special {
+    color: orange;
+}
+```
+
+`index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 id="special" style="color: blue;">This is h1 with id special</h1>
+        <h1>This is h1 without id</h1>
+        <link rel="stylesheet" href="styles.css" />
+    </body>
+</html>
+```
+
+> Warna akhir dari tag `h1` dengan id `special` menjadi biru. Hal tersebut karena inline CSS akan selalu mendapatkan prioritas tertinggi (pengecualian untuk `!important`
 
 ### Multiple Selector
 
@@ -736,15 +804,193 @@ p {
 }
 ```
 
-### Metode Responsive Web menggunakan CSS
-
 ### Flexbox CSS
+
+-   Flexbox adalah cara untuk mengatur layout.
+-   Flexbox memiliki kemampuan untuk menyesuaikan layout secara otomatis.
+-   Flexbox menjadi alternatif untuk membuat metode responsif web design.
+-   **Konsep flexbox** : Flexbox memiliki 1 parent/container dan bisa beberapa child/item.
+
+Contoh flexbox:
+`index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Flexbox</title>
+    </head>
+    <body>
+        <!-- PARENT -->
+        <div class="container">
+            <!-- CHILD -->
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+        </div>
+    </body>
+</html>
+```
+
+`style.css`
+
+```css
+.container {
+    display: flex;
+    border: 5px, solid purple;
+}
+
+.item {
+    border: 1px solid #000;
+    width: 200px;
+    height: 200px;
+    background-color: orange;
+}
+```
+
+Hasil :
+
+(!Hasil tampilan website)[]
+
+#### Property Flexbox
+
+##### Ordering & Orientation
+
+-   `flex-direction`
+
+    -   Properti `flex-direction` digunakan untuk mengatur letak item child.
+    -   Value:
+        -   `row` (default): secara default letak item child membentuk sebuah baris dari kiri ke kanan.
+        -   `row-reverse`: letak item child membentuk sebuah baris dari kanan ke kiri
+        -   `column`: letak item child membentuk sebuah baris dari atas ke bawah
+        -   `column-reverse`: letak item child membentuk sebuah baris dari bawah ke atas
+
+    ![flex_direction](/week-1/flex-direction.jpeg)
+
+-   `flex-wrap`
+
+    -   flex secara default akan membuat tata letak item children dalam 1 line saja. flex akan menyesuaikan space yang ada.
+    -   namun jika kamu ingin membatasi jumlah item children dalam 1 line lalu item children yang lain akan pindah ke posisi line yang baru, maka kita bisa menggunakan `flex-wrap`
+    -   Value:
+        -   `no-wrap` (default): secara default , flex tidak menggunakan flex-wrap
+        -   `wrap`: flex item akan memiliki beberapa line dari atas ke bawah jika space dalam 1 line sudah full width.
+        -   `wrap-reverse`: kebalikan dari wrap yaitu lex item akan memiliki beberapa line dari bawah ke atas jika space dalam 1 line sudah full width
+
+    ![flex_direction](/week-1/flex-wrap.jpeg)
+
+-   `flex-flow`
+
+    -   properti `flex-flow` digunakan sebagai shortcut untuk set up flex-direction dan flex-wrap bersamaan.
+    -   Value:
+        -   `row nowrap`
+        -   `column wrap`
+        -   `column reverse`
+        -   `row-reverse wrap-reverse`
+
+-   `order`
+
+    -   properti `order` pada flex adalah berfungsi untuk ordering item mana yang ingin kita atur posisinya berdasarkan urutan order
+    -   Value:
+        -   `-1` : Item child yang di set order -1, maka item child tersebut akan berada di ordering paling awal atau paling kiri.
+        -   `0`(default) : Flex secara default memiliki order 0 pada setiap item child. Ini berarti 0 akan membuat item child sesuai urutan pada html.
+        -   `1` : Item child yang di set order 1, maka item child tersebut akan berada di ordering paling akhir atau paling kanan
+
+    ![order](/week-1/order.jpeg)
+
+##### Alignment
+
+-   `justify-content`
+
+    -   properti `justify-content` digunakan untuk mengatur tata letak dan space antar item child secara horizontal atau main axis.
+    -   Value:
+        -   `flex-start`
+        -   `flex-end`
+        -   `center`
+        -   `space-between`
+        -   `space-around`
+        -   `space-evenly`
+
+    ![justify_content](/week-1/justify-content.jpeg)
+
+-   `align-items`
+
+    -   properti `align-items` digunakan untuk mengatur align dari item child secara vertikal atau cross axis.
+    -   Value:
+        -   `flex-start`
+        -   `flex-end`
+        -   `center`
+        -   `baseline`
+        -   `stretch`
+
+    ![align_items](/week-1/align-items.jpeg)
+
+-   `align-self`
+
+    -   properti `align-self` digunakan untuk mengatur align item pada masing-masing item.
+    -   Value:
+        -   `flex-start`
+        -   `flex-end`
+        -   `center`
+        -   `baseline`
+        -   `stretch`
+
+    ![align_self](/week-1/align-self.jpeg)
+
+-   `align-content`
+
+    -   properti `align-content` memiliki konsep yang sama seperti `justify-content`
+    -   `align-content` digunakan untuk mengatur tata letak dan space antar item child secara vertikal atau cross axis.
+    -   `align-content` akan berjalan jika item lebih dari 1 line/baris.
+    -   Value:
+        -   `flex-start`
+        -   `flex-end`
+        -   `center`
+        -   `space-between`
+        -   `space-around`
+        -   `space-evenly`
+        -   `stretch`
+
+    ![align_content](/week-1/align-content.jpeg)
+
+##### Flexibility
+
+-   `flex-grow`
+
+    -   properti `flex-grow` dapat mengatur size suatu item child pada flexbox.
+    -   value dari properti `flex-grow` adalah number dan tidak boleh negatif
+
+    ![flex_grow](/week-1/flex-grow.jpeg)
+
+-   `flex-shrink`
+
+    -   `flex-shrink` adalah properti yang membuat size suatu item child mengecil secara relatif terhadap item child yang lainnya.
+    -   value dari properti `flex-shrink` adalah number. Number negatif dianggap tidak valid.
+    -   semakin besar value number dari properti ini, maka semakin kecil size dari suatu item child.
+
+-   `flex-basis`
+
+    -   `flex-basis` adalah properti yang sama fungsinya seperti `width`.
+    -   `flex-basis` mengatur width dari setiap item child.
+        -   jika kita telah menggunakan `width`, maka `flex-basis` akan melakukan override properti `width`.
+    -   namun `flex-basis` tidak akan berjalan jika kita telah menggunakan `min-width` dan `max-width`.
+    -   Value:
+        -   `auto`
+        -   `number`
+        -   `initial`
+        -   `inherit`
 
 ---
 
 # Module 5 - Algorithm & Data Structures
 
--   Algoritma adalah
+-   Algoritma adalah deskripsi berupa step-step yang dibutuhkan untuk menyelesaikan suatu masalah
 
 ### Perbedaan Algoritma dan Struktur Data
 
