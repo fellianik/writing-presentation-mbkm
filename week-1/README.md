@@ -857,7 +857,7 @@ Contoh flexbox:
 
 Hasil :
 
-![hasil_website](/week-1/contoh-html-flexbox.jpeg)
+(!Hasil tampilan website)[]
 
 #### Property Flexbox
 
@@ -992,15 +992,73 @@ Hasil :
 
 -   Algoritma adalah deskripsi berupa step-step yang dibutuhkan untuk menyelesaikan suatu masalah
 
-### Perbedaan Algoritma dan Struktur Data
+### Manfaat Algoritma dan Struktur Data
+
+-   Data struktur digunakan untuk mengelola/manajemen sebuah data
+-   Algoritma yang akan menyelesaikan suatu permasalahan menggunakan
+    data tersebut.
+-   Belajar algoritma sama aja dengan mengingat kembali alur berfikir yg terstruktur
 
 ### Ciri-ciri Algoritma
 
+-   **Input** - memiliki 0 atau lebih input
+-   **Output** - memiliki minimal 1 buah output
+-   **Definisiteness** - instruksi yang jelas dan tidak ambigu
+-   **Finiteness** - memiliki titik berhenti (stop)
+-   **Effectiveness** - tepat sasaran dan efisien
+
 ### Jenis Proses Algoritma
+
+-   **Sequence** - instruksi yang dijalankan secara _berurutan_
+-   **Selection** - instruksi yang dijalankan jika memenuhi suatu _kondisi_
+-   **Iteration** - instruksi yang _berulang_ kali dijalankan selama memenuhi suatu _kondisi_
+-   **Concurrent** - instruksi yang dijalankan secara _bersamaan_
 
 ### Penulisan Algoritma
 
+-   **Deskriptif**
+    -   Penulisan ditulis seperti menulis tutorial / langkah-langkah dengan menggunakan bahasa sehari-hari
+-   **Flow Chart**
+    -   Penulisan algoritma disajikan dengan menggunakan diagram
+    -   Penyajian algoritma lebih mudah dibaca karena memiliki tampilan visual
+    -   Flowchart memiliki simbol sendiri dan memiliki arti
+-   **Pseudo Code**
+    -   Penulisan ditulis hampir menyerupai penulisan pada kode pemrograman
+    -   Bagian-bagian pseudocode:
+        -   **Judul** - penjelasan dari algoritma yang dibuat
+        -   **Deklarasi** - mendefinisikan nama (variabel) yang akan digunakan
+        -   **Deskripsi** - langkah-langkah penyelesaian masalah
+            > Penulisan tidak ada aturan baku
+    -   Pseudocode harus **jelas, simpel, konsisten, dan mudah dibaca orang lain**
+
 ### Contoh Algoritma
+
+-   Kasus :
+
+    -   Si A ingin menampilkan deretan nilai 0 sampai N
+    -   N adalah nilai akhir yang diinputkan
+    -   Jika Si A menginputkan N dengan nilai 100, maka program akan menampilkan deretan nilai 1,2,3,4,5,...,100
+
+-   Algoritma :
+
+    1. Membuat variabel N
+    2. Input nilai N
+    3. Buat deklarasi i = 0
+    4. Jika i <= N maka tampilkan nilai i
+    5. Tambahkan nilai i dengan 1
+    6. Ulangi langkah 4
+    7. Jika i > N maka perulangan berhenti
+    8. Program selesai
+
+-   Pseudocode
+
+    ```
+    STORE N WITH ANY NUMBER
+
+    FOR i FROM 0 TO N INCREMENT BY 1
+        DISPLAY i
+    END FOR
+    ```
 
 ---
 
