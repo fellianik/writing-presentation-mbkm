@@ -857,7 +857,7 @@ Contoh flexbox:
 
 Hasil :
 
-(!Hasil tampilan website)[]
+![hasil_website](/week-1/contoh-html-flexbox.jpeg)
 
 #### Property Flexbox
 
