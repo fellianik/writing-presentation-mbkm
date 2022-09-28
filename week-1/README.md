@@ -49,12 +49,6 @@
 | `nano <file-name>`       | membuka file di CLI                          |
 | `<app-name> <file-name>` | membuka file dengan aplikasi yang ditentukan |
 
-#### Menulis Text di Dalam File Menggunakan CLI
-
-| Command                      | Keterangan                                        |
-| ---------------------------- | ------------------------------------------------- |
-| `echo "....." > <file-name>` | menuliskan text di CLI dan disimpan ke dalam file |
-
 #### Melihat Isi File
 
 | Command                         | Keterangan                                                              |
