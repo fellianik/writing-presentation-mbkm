@@ -1053,7 +1053,8 @@ Hasil :
 -   Pseudocode
 
     ```
-    STORE N WITH ANY NUMBER
+    STORE N WITHOUT ANY VALUE
+    SET N WITH number 100
 
     FOR i FROM 0 TO N INCREMENT BY 1
         DISPLAY i
@@ -1064,12 +1065,187 @@ Hasil :
 
 # Module 6 - JS Dasar - Intro Javascript pt. 1
 
--   Javascript adalah
+-   Javascript adalah bahasa pemrograman yang digunakan untuk logic pada sebuah website
+-   JavaScript dapat berjalan melalui browser seperti chrome, mozilla, edge, dll
+-   Javascript bisa dibuka di browser dengan cara :
+    -   buka browser
+    -   klik kanan mouse
+    -   klik Inspect
+    -   Di bagian tools, klik bagian Console
+    -   Maka akan tampil sebuah console yang bisa digunakan secara langsung maupun hasil dari pemrograman menggunakan file html dan js
 
-### Cara menjalankan javascript
+### Console.log()
+
+-   `console.log()` adalah tempat untuk menampilkan isi sebuah variabel. Juga bisa digunakan untuk mengecek logika pemrograman, dan juga digunakan untuk debugging(untuk mengetahui error pada code) pada pemrograman web.
 
 ### Tipe Data Javascript
 
+-   _**Primitive:**_
+    -   **String**
+        -   Tipe data yang menggunakan grup karakter yang ada pada di keyboard
+        -   Karakter yang bisa yaitu letters (huruf), number (angka), spaces (spasi), symbol, dll
+        -   Penulisan tipe data string harus diawali single quotes (`'......'`) atau double quotes (`"....."`)
+        -   Contoh : `"Hello World"`
+    -   **Number**
+        -   Tipe data yang mengandung semua angka termasuk angka desimal
+        -   Contoh : `12`, `30`, `20.75`, `-25`
+    -   **Boolean**
+        -   Tipe data yang hanya mempunyai 2 buah nilai yaitu `true` dan `false`
+    -   **Null**
+        -   Tipe data yang diartikan bahwa sebuah variabel tidak memiliki nilai
+            > Null berbeda dengan string kosong karena string kosong bertipe string
+    -   **Undefined**
+        -   Tipe data yang mempresentasikan variabel yang tidak memiliki nilai
+        -   Undefined didapat dari :
+            -   Nilai pemanggilan variabel yang belum didefinisikan
+            -   Nilai dari pemanggilan element array yang tidak ada
+            -   Nilai dari pemanggilan property object yang tidak ada
+            -   Nilai dari pemanggilan fungsi yang tidak mengembalikan nilai (return)
+            -   Nilai dari parameter fungsi yang tidak memiliki argumen
+
+-   _**Non-primitive:**_
+    -   **Object**
+        -   Berupa koleksi tipe data yang saling berhubungan
+        -   Dapat menyimpan berbagai tipe data primitive
+        -   Mempunyai key dan value
+
+### Variabel
+
+-   Variabel adalah tempat untuk menyimpan nilaii
+
+-   3 cara mendefinisikan sebuah variabel di js:
+    -   **`var`**
+        -   `var` adalah pendefinisian agar nilai variabel bisa dinamis / dapat diubah
+        -   Versi lama js
+        -   Tidak mendukung kaidah global variabel dan local variabel, pendefinisian bisa double
+    -   **`let`**
+        -   `let` adalah versi terbaru pendefinisian agar nilai variabel bisa dinamis / dapat diubah
+        -   Versi baru ES6
+        -   Mendukung kaidah global variabel dan local variabel, pendefinisian hanya bisa satu kali
+    -   **`const`**
+        -   `const` adalah pendefinisian variabel yang nilainya tidak dapat diubah
+        -   Biasanya digunakan untuk menggambarkan konstanta sebuah nilai
+        -   Untuk tipe data object dan array, nilai didalamnya masih bisa di tambahkan/diubah
+
+-   Aturan penamaan variabel:
+    -   Harus mendeskripsikan tentang data yang disimpan
+    -   Tidak bisa menggunakan number pada awal nama variabel
+    -   Gunakan camelCase untuk penamaan yang lebih dari 1 kata. Contoh : `myName`, `myAge`
+
 ### Operator
 
+-   **Assignment Operator**
+    -   Digunakan untuk menyimpan sebuah nilai pada variabel
+    -   Operatornya yaitu sama dengan (=)
+
+-   **Mathematical Assignment Operator**
+    -   Digunakan untuk melakukan operasi matematika
+    -   Penulisan bisa dilakukan dengan cara `x += 3`. Berarti `x = x + 3`.
+    -   Penulisan lainnya : `-=`, `*=`, `/=`
+
+-   **Increment & Decrement**
+    -   Digunakan untuk menambah / mengurangi sebesar 1 nilai
+    -   Increment -> `i++`
+    -   Decrement -> `i--`
+
+-   **Aritmethic Operator**
+    -   Operator yang melibatkan operasi aritmatika
+    -   Penjumlahan (`+`), pengurangan (`-`), perkalian (`*`), pembagian (`/`), sisa bagi/modulus (`%`), pangkat (`**`)
+
+-   **Comparison Operator**
+    -   Operator yang digunakan untuk membandingkan satu nilai dengan nilai lainnya
+    -   Hasil perbandingan bernilai antara true dan false
+    -   Simbol: `<`, `>`, `<=`, `>=`, `==|===`, `!=|!==`
+
+-   **Logical Operator**
+    -   Digunakan untuk sebuah conditional pada pemrograman
+    -   Hasil logical bernilai boolean antara `true` dan `false`
+    -   Simbol: AND (`&&`), OR (`||`), NOT (`!`)
+
 ### Conditional
+
+-   Conditional merupakan statement percabangan yang menggambarkan suatu kondisi
+
+-   Jika kondisi benar (true)maka code yang didalamnya akan dijalankan
+
+-   **IF Statement:**
+    ```javascript
+    if (condition) {
+        // code yang dieksekusi
+    }
+    ```
+    -   Arti: JIKA kondisi benar MAKA eksekusi kode yang dibuat
+    -   Kondisi bisa berupa perbandingan, logical, boolean
+
+-   **IF-ELSE Statement:**
+    ```javascript
+    if (condition) {
+        // code yang dieksekusi jika kondisi benar
+    } else {
+        // code yang dieksekusi jika kondisi salah
+    }
+    ```
+    -   Arti: JIKA kondisi **benar** MAKA eksekusi kode yang dibuat. JIKA kondisi **salah** MAKA eksekusi kode yang dibuat.
+    -   Else akan mengeksekusi sebuah statement/code jika suatu kondisi bernilai false
+
+-   **IF-ELSE IF Statement:**
+    ```javascript
+    if (condition_1) {
+        // code yang dieksekusi jika kondisi 1 benar
+    } else if (condition_2) {
+        // code yang dieksekusi ketika kondisi 1 salah, kondisi 2 benar
+    } else {
+        // code yang dieksekusi jika kondisi 1 dan 2 salah
+    }
+    ```
+    -   Arti: JIKA kondisi 1 **benar** MAKA eksekusi kode yang dibuat. JIKA kondisi 1 **salah**, akan tetapi kondisi 2 **benar** MAKA eksekusi kode yang yang dibuat. JIKA kondisi 1 dan 2 **salah** MAKA eksekusi kode yang dibuat
+    -   Dapat digunakan jika memiliki berbagai kondisi
+
+-   **Truthy and Falsy:**
+    -   Truthy dan falsy digunakan untuk mengecek apakah variabel telah terisi namun tidak mementingkan nilainya.
+
+-   **Switch Case Conditional:**
+    ```javascript
+    switch (expression) {
+        case value_1:
+            statement_1;
+            break;
+        case value_2:
+            statement_2;
+            break;
+        case value_3:
+            statement_3;
+            break;
+        default:
+            default_statement;
+    }
+    ```
+    -   Digunakan jika kondisi dan percabangan terlalu banyak
+
+-   **Ternary Operator:**
+    ```javascript
+    kondisi ? statement_true : statement_else;
+    ```
+    -   Merupakan short-syntax untuk statement if-else
+
+### Looping
+
+- Looping adalah statement yang mengulang sebuah instruksi hingga kondisi terpenuhi atau jika kondisi berhenti tercapai
+
+- **FOR LOOP:**
+    ```javascript
+    kondisi ? statement_true : statement_else;
+    ```
+  - Digunakan jika mengetahui banyak nilai pasti untuk perulangannya
+
+- **WHILE LOOP:**
+    ```javascript
+    kondisi ? statement_true : statement_else;
+    ```
+  - 
+
+- **DO WHILE:**
+  - 
+
+- **Nested Loop:**
+  - 
