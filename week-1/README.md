@@ -816,6 +816,7 @@ Contoh flexbox:
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Flexbox</title>
+        <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
         <!-- PARENT -->
@@ -851,7 +852,7 @@ Contoh flexbox:
 
 Hasil :
 
-(!Hasil tampilan website)[]
+![Hasil tampilan website](/week-1/contoh-html-flexbox.jpeg)
 
 #### Property Flexbox
 
