@@ -49,6 +49,12 @@
 | `nano <file-name>`       | membuka file di CLI                          |
 | `<app-name> <file-name>` | membuka file dengan aplikasi yang ditentukan |
 
+#### Menulis Text di Dalam File Menggunakan CLI
+
+| Command                      | Keterangan                                        |
+| ---------------------------- | ------------------------------------------------- |
+| `echo "....." > <file-name>` | menuliskan text di CLI dan disimpan ke dalam file |
+
 #### Melihat Isi File
 
 | Command                         | Keterangan                                                              |
@@ -1228,18 +1234,35 @@ Hasil :
 
 - **FOR LOOP:**
     ```javascript
-    kondisi ? statement_true : statement_else;
+    for(inisialisasi; kondisi; kondisi_setelahnya){
+        // statement
+    }
     ```
   - Digunakan jika mengetahui banyak nilai pasti untuk perulangannya
 
 - **WHILE LOOP:**
     ```javascript
-    kondisi ? statement_true : statement_else;
+    while (expression){
+        // statement
+    }
     ```
-  - 
+  - Instruksi perulangan akan dijalankan jika kondisi bernilai `true`
+  - Digunakan ketika tidak mengetahui jumlah pasti dari perulangan
 
 - **DO WHILE:**
-  - 
+    ```javascript
+    do {
+        // statement
+    } while (expression)
+    ```
+    - Program setidaknya menjalankan pengulangan 1 kali sebelum dilakukan pengecekan kondisi
 
 - **Nested Loop:**
-  - 
+    ```javascript
+    for (inisialisasi; kondisi; kondisi_setelahnya){
+        for(inisialisasi; kondisi; kondisi_setelahnya){
+            //statement
+        }
+    }
+    ```
+  - Jika kita membuat looping didalam looping. Maka ini dinamakan Nested Loop. Looping pertama dianalogikan sebagai baris. Looping kedua dianalogikan sebagai kolom
