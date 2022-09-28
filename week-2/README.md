@@ -2,8 +2,6 @@
 
 ----
 
-# Module 6 : JS Dasar - Intro JavaScript pt.2
-
 # Module 6 : JS Dasar - Scope and Function
 
 # Module 6 : JS Dasar - DOM Manipulation
