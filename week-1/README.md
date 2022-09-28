@@ -1058,7 +1058,7 @@ Hasil :
 
 ---
 
-# Module 6 - JS Dasar - Intro Javascript pt. 1
+# Module 6 - JS Dasar - Intro Javascript
 
 -   Javascript adalah bahasa pemrograman yang digunakan untuk logic pada sebuah website
 -   JavaScript dapat berjalan melalui browser seperti chrome, mozilla, edge, dll
