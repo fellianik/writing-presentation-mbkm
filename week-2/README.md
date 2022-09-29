@@ -1,4 +1,4 @@
-# Minggu 2
+# Minggu 2 : 26 - 30 September 2022
 ____
 # Module 6 - JS Dasar - Scope and Function
 
