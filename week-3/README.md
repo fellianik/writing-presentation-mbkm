@@ -811,18 +811,6 @@ console.log(faktorialFor(3));
 
 ---
 
-# Module 8 - JS Intermediate - Asynchronous
-
-## Pengertian
-
-## Callback
-
-## Promise
-
-## Async await
-
----
-
 # Module 8 - JS Intermediate - Web Storage
 
 -   Ada beberapa cara untuk menyimpan data pengguna seperti pencarian, artikel berita, dan lain-lain ke lokal (browser) menggunakan web storage seperti cookies, local storage, dan session storage.
@@ -911,3 +899,246 @@ Contoh:
     }
 </script>
 ```
+
+---
+
+# Module 8 - JS Intermediate - Asynchronous
+
+## Pengertian
+
+-   Bahasa pemrograman JavaScript termasuk ke dalam **single-thread language** atau **synchronous** yang artinya hanya dapat mengeksekusi satu perintah pada satu waktu dan harus menunggu satu perintah tersebut selesai sebelum melanjutkan perintah selanjutnya.
+-   **Synchronous** adalah saat kita mengeksekusi perintah satu persatu dan berurutan. (_BLOCKING_)
+-   Asynchronous yang biasa dikenal juga dengan sebutan non-blocking mengizinkan komputer kita untuk memproses perintah lain sambil menunggu suatu proses lain yang sedang berlangsung.
+-   Asynchronous bisa melakukan lebih dari 1 proses sekaligus (multi-thread).
+-   Eksekusi perintah dengan asynchronous tidak akan melakukan blocking atau menunggu perintah sebelumnya selesai
+-   Cara membuat proses Asynchronous:
+
+    -   `setTimeout(function, milliseconds)` digunakan untuk simulasi pemanggilan kembali proses asynchronous yang sedang/sudah selesai dijalankan. Pemanggilan hanya dilakukan 1 kali.
+
+        ```javascript
+        setTimeout(() => {
+            console.log("Cuci baju"); // proses asynchronous
+        }, 1000);
+        console.log("Menyapu");
+        console.log("Mengepel");
+        console.log("Memasak");
+
+        // 1000 ms = 1 second
+
+        // Output:
+        // Menyapu
+        // Mengepel
+        // Memasak
+        // Cuci baju
+        ```
+
+    -   `setInterval(function, milliseconds)` digunakan untuk simulasi pemanggilan proses asynchronous yang sedang/sudah dijalankan dalam interval waktu tertentu. Pemanggilan dilakukan berkali-kali sesuai interval waktu yang ditentukan.
+
+        ```javascript
+        setInterval(() => {
+            console.log("Cuci baju"); // proses asynchronous
+        }, 3000);
+        console.log("Menyapu");
+        console.log("Mengepel");
+        console.log("Memasak");
+
+        // 3000 ms = 3 second
+
+        // Output:
+        // Menyapu
+        // Mengepel
+        // Memasak
+        // Cuci baju (x time)
+
+        // Cuci baju akan dijalankan setiap 3 detik sekali
+        ```
+
+-   Mengatasi race condition: Callback, Promise, Async await
+
+## Callback
+
+-   Callback adalah function yang dieksekusi di dalam function lain melalui parameter
+-   Contoh callback dalam Asynchronous:
+
+    ```javascript
+    console.log("A");
+
+    /* callbacknya adalah
+    () => {
+        console.log("B")
+    }
+    */
+    setTimeout(() => {
+        console.log("B");
+    }, 1000);
+
+    console.log("C");
+
+    /* HASIL OUTPUT:
+    A
+    C
+    B
+    */
+    ```
+
+## Promise
+
+-   Promise sendiri adalah salah satu fitur dari ES6 (ES2015) JavaScript. Konsep promise hadir untuk memecahkan masalah yang bertele-tele dengan callback.
+-   Analogi promise pada JavaScript:
+
+    -   **pending**, jika data sedang diproses.
+    -   **fulfilled**, jika data telah berhasil didapatkan.
+    -   **rejected**, jika data gagal didapatkan.
+
+| State  | pending   | fulfilled | rejected |
+| ------ | --------- | --------- | -------- |
+| Result | undefined | value     | error    |
+
+-   Pembuatan promise
+
+    ```javascript
+    // pembuatan promise.............
+    let nontonPromise = new Promise((resolve, reject) => {
+        if (true) {
+            resolve("nonton terpenuhi"); // berhasil
+        }
+
+        reject("gagal"); // gagal
+    });
+    ```
+
+-   Eksekusi Promise
+
+    -   Untuk memanggil promise bisa menggunakan `.then()`
+    -   Untuk mengantisipasi error, bisa menggunakan `.catch()`
+    -   fungsi callback yang pasti tereksekusi dalam kondisi apapun (_fullfield_ maupun _rejected_) menggunakan `.finally()`
+
+    ```javascript
+    nontonPromise
+        .then((result) => {
+            console.log(result);
+            return `${result} bareng doi`;
+        })
+        .then((result) => {
+            console.log(result);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+        .finally(() => {
+            console.log("Ini adalah bagian yang pasti di eksekusi")
+        })
+    ```
+
+## Async await
+
+-   **async**, mengubah function synchronous menjadi asynchronous.
+-   **await**, menunda eksekusi hingga proses asynchronous selesai
+-   Sebuah _async function_ bisa tidak berisi _await_ sama sekali atau lebih dari satu _await_.
+-   Keyword _await_ hanya bisa digunakan didalam _async function_, jika digunakan di luar _async function_ maka akan terjadi error.
+-   Dengan menambahkan keyword `async`
+-   promise dapat ditangkap menggunakan keyword `await`
+
+```javascript
+async function astyncNonton() {
+    let result = await nonton("jalan");
+    console.log(result);
+}
+
+asyncNonton();
+```
+
+-   Error Handler
+
+    -   menggunakan keyword `try` dan `catch`
+
+        ```javascript
+        async function astyncNonton() {
+            try {
+                let result = await nonton("jalan");
+                console.log(result);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        asyncNonton();
+        ```
+
+## Fetch
+
+-   `fetch()` adalah salah satu proses asynchronous di JavaScript sehingga kita perlu menggunakan salah satu diantara _promise_ atau _async/await_.
+-   Langsung menggunakan web API
+-   API -> jembatan komunikasi ke server untuk mendapatkan data
+
+**Penggunaan menggunakan promise:**
+
+```javascript
+fetch("https://digimon-api.vercel.app/api/digimon")
+    .then((result) => result.json()) // sedang memproses data yang diambil
+
+    .then((result) => {
+        console.log(result); // menghasilkan datanya
+    });
+```
+
+**Penggunaan menggunakan async await:**
+
+```javascript
+let getDataDigimon = async () => {
+    let response = await fetch("https://digimon-api.vercel.app/api/digimon");
+    let result = await response.json();
+    console.log(result);
+};
+
+getDataDigimon();
+```
+
+> **Contoh penggunaan fetch dengan DOM:**
+>
+> `index.html`
+>
+> ```javascript
+> <!DOCTYPE html>
+> <html lang="en">
+>  <head>
+>    <meta charset="UTF-8" />
+>    <meta >http-equiv="X-UA-Compatible"> content="IE=edge" />
+>    <meta name="viewport" content="width=device-width,> initial-scale=1.0" />
+>    <title>Document</title>
+>
+>    <script src="script.js" defer></script>
+>    <script src="digimon.js" defer></script>
+>
+>  </head>
+>  <body>
+>
+>    <div id="list-digimon">
+>
+>    </div>
+>
+>  </body>
+> </html>
+> ```
+>
+> `script.js`
+>
+> ```javascript
+> listDigimon = document.getElementById("list-digimon");
+>
+> let getDataDigimon = async () => {
+>     let URL = "https://digimon-api.vercel.app/api/digimon";
+>     let response = await fetch(URL);
+>     let digimons = await response.json();
+>
+>     // menampilkan 10 data digimon
+>     digimons.slice(0, 10).forEach((item, index) => {
+>         listDigimon.innerHTML += `<div>
+>       <img src="${item.img}" alt="" width="200">
+>       <h3>${item.name}</h3>
+>       </div>`;
+>     });
+> };
+>
+> getDataDigimon();
+> ```
