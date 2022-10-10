@@ -10,11 +10,9 @@
 
 ### Pengertian
 
-Array adalah tipe data list order yang dapat menyimpan tipe data apapun di dalamnya.
-
-Array dapat menyimpan tipe data String, Number, Boolean, dan lainnya.
-
-Penulisan array menggunakan tanda kurung kotak `[]` dan isinya dipisahkan dengan tanda koma `,`
+-   Array adalah tipe data list order yang dapat menyimpan tipe data apapun di dalamnya.
+-   Array dapat menyimpan tipe data String, Number, Boolean, dan lainnya.
+-   Penulisan array menggunakan tanda kurung kotak `[]` dan isinya dipisahkan dengan tanda koma `,`
 
 Contoh:
 
@@ -33,9 +31,8 @@ let randomData = ["Felli", 19, true];
 
 ### Mengakses Array
 
-Data array dihitung menggunakan index dan dimulai dari **data ke-0**.
-
-Data pertama adalah index ke-0
+-   Data array dihitung menggunakan index dan dimulai dari **data ke-0**.
+-   **Data pertama adalah index ke-0**
 
 Contoh:
 
@@ -59,11 +56,9 @@ console.log(judulAnime); // ["Detective Conan", "One Piece", "Sword Art Online"]
 
 ### Const in Array
 
-Jika menggunakan let, kita dapat mengubah array dengan array baru dan konten nilai yang ada di dalam array dengan nilai lain
-
-Const tidak bisa melakukan update data. Namun pada Array kita dapat melakukan update konten nilai di dalam array (mutable).
-
-Yang tidak bisa adalah mengubah array dengan array yang baru jika menggunakan const
+-   Jika menggunakan let, kita dapat mengubah array dengan array baru dan konten nilai yang ada di dalam array dengan nilai lain
+-   Const tidak bisa melakukan update data. Namun pada Array kita dapat melakukan update konten nilai di dalam array (mutable).
+-   Yang tidak bisa adalah mengubah array dengan array yang baru jika menggunakan const
 
 ```javascript
 const judulAnime = ["Detective Conan", "One Piece", "Naruto"];
@@ -80,6 +75,7 @@ judulAnime = "Sword Art Online"; // Error
 -   Array memiliki 5 properti yang sering digunakan yaitu constructor, length, index, input, dan prototype.
 -   Properties adalah fitur yang sudah disediakan oleh Javascript untuk memudahkan developer.
 -   Panjang Array
+
     Syntax:
 
     ```javascript
@@ -97,7 +93,6 @@ judulAnime = "Sword Art Online"; // Error
 ### Method Array
 
 -   Array memiliki method atau biasa disebut built-in methods.
-
 -   Artinya Javascript sudah memudahkan kita dengan menyediakan function/method umum yang bisa kita gunakan.
 
 -   `push()`
@@ -113,7 +108,7 @@ judulAnime = "Sword Art Online"; // Error
 
 -   `unshift()`
 
-    Menambahkan data pada index pertama array
+    **Menambahkan** data pada **index pertama** array
 
     ```javascript
     let judulAnime = ["Detective Conan", "One Piece", "Naruto"];
@@ -124,7 +119,7 @@ judulAnime = "Sword Art Online"; // Error
 
 -   `pop()`
 
-    Menghapus data di akhir array
+    **Menghapus** data di **akhir** array
 
     ```javascript
     let judulAnime = ["Detective Conan", "One Piece", "Naruto"];
@@ -135,7 +130,7 @@ judulAnime = "Sword Art Online"; // Error
 
 -   `shift()`
 
-    Menghapus data di index pertama array
+    **Menghapus** data di **index pertama** array
 
     ```javascript
     let judulAnime = ["Detective Conan", "One Piece", "Naruto"];
@@ -203,7 +198,8 @@ judulAnime = "Sword Art Online"; // Error
     ```
 
 -   `sort()`
-    Mengurutkan secara ascending
+
+    Mengurutkan nilai array
 
     ```javascript
     const number = [3, 1, 5, 7, 2];
@@ -243,7 +239,7 @@ judulAnime = "Sword Art Online"; // Error
 
 -   `forEach()`
 
-    `forEach()` tidak bisa mengembalikan nilai
+    -   `forEach()` tidak bisa mengembalikan nilai
 
     ```javascript
     let judulAnime = ["Detective Conan", "One Piece", "Naruto", "Sword Art Online", "Kaito Kid"];
@@ -259,7 +255,7 @@ judulAnime = "Sword Art Online"; // Error
 
 -   `map()`
 
-    `map()` bisa mengembalikan nilai (bisa menggunakan `return`)
+    -   `map()` bisa mengembalikan nilai (bisa menggunakan `return`)
 
     ```javascript
     let judulAnime = ["Detective Conan", "One Piece", "Naruto", "Sword Art Online", "Kaito Kid"];
@@ -375,7 +371,7 @@ console.log(siswa);
 
 ## Akses Object
 
-Ada 2 cara yaitu **dot notation** dan **bracket**
+-   Ada 2 cara yaitu **dot notation** dan **bracket**
 
 ```javascript
 let siswa = {
@@ -398,7 +394,7 @@ console.log(siswa[properti]); // 17
 
 ## Menambah Property
 
-Langsung menambahkan dengan membuat properti baru dan diisi dengan nilainya
+-   Langsung menambahkan dengan membuat properti baru dan diisi dengan nilainya
 
 ```javascript
 let buku = {
@@ -436,7 +432,7 @@ console.log(buku);
 
 ## Update Object
 
-menggunakan tanda assign `=`
+-   Menggunakan tanda assign `=`
 
 ```javascript
 let hewan = {
@@ -467,7 +463,7 @@ console.log(bunga);
 
 ## Delete Object
 
-menggunakan keyword `delete`
+-   Menggunakan keyword `delete`
 
 ```javascript
 let hewan = {
@@ -488,15 +484,186 @@ console.log(hewan);
 
 ## Method
 
-Method adalah function yang terdapat di dalam object
+-   Method adalah function yang terdapat di dalam object
+
+```javascript
+const greeting = {
+    welcome: function () {
+        return "halo selamat datang";
+    },
+    afterPay: function () {
+        return "Terimakasih sudah membeli produk kami";
+    },
+};
+
+// Method welcome()
+console.log(greeting.welcome());
+// Output: halo selamat datang
+
+// Method afterPay()
+console.log(greeting.afterPay());
+// Output: Terimakasih sudah membeli produk kami
+
+let siswa = {
+    nama: "dila",
+    umur: 17,
+    hobi: "membaca",
+};
+
+console.log(siswa);
+// [nama, umur, hobi]
+
+// Method keys()
+console.log(Object.keys(siswa));
+// Output: {"nama", "umur", "hobi"}
+
+// Method values()
+console.log(Object.values(siswa));
+// Output: {'dila', 17, "membaca"}
+```
 
 ## Nested Object
 
-## Pass by reference
+```javascript
+let buku = {
+    judul: "tips jago javascript",
+    tahun: 2022,
+    penulis: {
+        penulis1: {
+            nama: "Reyhan",
+            umur: 28,
+            kota: "jakarta",
+        },
+        penulis2: {
+            nama: "aby",
+            umur: 25,
+            kota: "bandung",
+        },
+    },
+};
+
+console.log(buku.penulis.penulis1.nama);
+// Output: Reyhan
+
+console.log(buku.penulis.penulis2.umur);
+// Output: 25
+```
 
 ## Looping
 
+-   Looping khusus untuk object yaitu `for in`
+
+```javascript
+let siswa = {
+    nama: "Reyhan",
+    umur: 22,
+    asal: "jakarta",
+    hobi: "membaca",
+};
+
+for (let key in siswa) {
+    console.log(key);
+}
+/* Output: 
+nama
+umur
+asal
+hobi
+*/
+
+for (let key in siswa) {
+    console.log(siswa[key]);
+}
+/* Output: 
+Reyhan
+22
+jakarta
+membaca
+*/
+
+let buku = {
+    judul: "tips jago javascript",
+    tahun: 2022,
+    penulis: {
+        penulis1: {
+            nama: "Reyhan",
+            umur: 28,
+            kota: "jakarta",
+        },
+        penulis2: {
+            nama: "aby",
+            umur: 25,
+            kota: "bandung",
+        },
+    },
+};
+
+for (let key in buku.penulis.penulis1) {
+    console.log(buku.penulis.penulis1[key], "----ini dari nested");
+}
+/* Output:
+Reyhan ----ini dari nested
+28 '----ini dari nested'
+jakarta ----ini dari nested
+*/
+```
+
 ## Array of Object
+
+-   Object berada di dalam Array
+
+```javascript
+let users = [
+    {
+        nama: "dila",
+        umur: 17,
+        alamat: "bandung",
+    },
+
+    {
+        nama: "audzan",
+        umur: 18,
+        alamat: "jakarta",
+    },
+    {
+        nama: "dolton",
+        umur: 16,
+        alamat: "sulawesi",
+    },
+];
+
+console.log(users);
+
+// Menambahkan property baru menggunakan map
+let data = users.map((el) => {
+    el.status = "aktif";
+    return el;
+});
+
+console.log(data);
+/* Ouput:
+[
+    {
+        nama: 'dila', 
+        umur: 17, 
+        alamat: 'bandung', 
+        status: 'aktif'
+    },
+    {
+        nama: 'audzan', 
+        umur: 18, 
+        alamat: 'jakarta', 
+        status: 'aktif'
+    },
+    {
+        nama: 'dolton', 
+        umur: 16, 
+        alamat: 'sulawesi', 
+        status: 'aktif'
+    }
+]
+*/
+```
 
 ---
 
@@ -504,10 +671,143 @@ Method adalah function yang terdapat di dalam object
 
 ## Module
 
--   export
--   import
+-   JS Modules adalah cara untuk memisahkan kode ke file yang berbeda
+-   Keuntungan:
+
+    -   Mudah untuk mengelola kode
+    -   Kode tidak menumpuk di 1 file
+
+-   Penggunaan Module:
+
+    1. Tambahkan `type="module"` pada script utama
+    2. Siapkan script ke-2, dst untuk melakukan export
+    3. Lakukan import pada file/script utama
+
+-   Peraturan Pengaksesan Menggunakan Export dan Import
+
+    -   file yang di urutan atas tidak dapat di akses oleh yang di bawah
+    -   file yang di bawah dapat diakses oleh yang di atas
+
+Contoh:
+
+```html
+<!-- DI HTML -->
+<!-- SCRIPT UTAMA -->
+<script src="./indonesia.js" type="module"></script>
+
+<!-- SCRIPT TAMBAHAN -->
+<!-- 
+    <script src="./jepang.js" type="module"></script>
+    <script src="./amerika.js" type="module"></script> 
+-->
+```
+
+-   `export`
+
+    -   Menggunakan keyword `export`
+    -   Dapat melakukan export pada variabel, function, class
+    -   `export` dapat melakukan banyak export
+    -   `export` di tangkap (import) menggunakan kurung kurawal
+    -   `export default` cuma bisa 1 aja yg di export
+    -   `export default` ditangkap tanpa kurung kurawal
+
+    Contoh:
+
+    ```javascript
+    let motor = ["suzuki", "yamaha", "honda", "kawasaki"];
+
+    const smartPhone = ["sony", "samsung", "fujitsu", "LG"];
+
+    let entertainment = ["anime", "manga", "wibu", "dorama"];
+
+    // Cara export langsung di variabel / function
+    export function sayHello() {
+        console.log("hallooo");
+    }
+
+    // Membuat export di banyak variabel
+    export { motor, smartPhone };
+
+    // Membuat export dan sekaligus mengganti nama variabel
+    // Menggunakan keyword as
+    export { motor, smartPhone as smartPhoneJepang };
+
+    // export default
+    export default entertainment;
+    ```
+
+-   `import`
+
+    -   menggunakan keyword `import` dan `from`
+    -   variabel yang di export di tulis di dalam kurung kurawal `{}`
+
+    Contoh:
+
+    ```javascript
+    import Entertainment, { motor as motorJepang, smartPhoneJepang, sayHello } from "./jepang.js";
+    ```
+
+    Keterangan:
+
+    -   `Entertaiment` => sebagai export default
+    -   `motor as motorJepang` => variabel `motor` akan diganti namanya menjadi `motorJepang` di file ini
+    -   `smartPhoneJepang` => nama variabel yang sudah dideklarasikan di file jepang.js
+    -   `from "./jepang.js"` => merupakan lokasi dari file import
 
 ## Rekursif
+
+-   Rekursif adalah function yang memanggil dirinya sendiri sampai kondisi tertentu.
+-   Biasanya digunakan untuk persoalan matematika
+-   Function rekursif punya 2 case:
+    -   **Base case** -> titik paling kecil (berhenti)
+    -   **Recursion case** -> titik memanggil fungsi itu sendiri
+
+Contoh:
+
+```javascript
+// menampilkan deret angka 1 2 3 4 5
+
+function deretAngka(n) {
+    if (n == 1) {
+        console.log(n);
+    } else {
+        deretAngka(n - 1);
+        console.log(n);
+    }
+}
+
+deretAngka(5); // 1 2 3 4 5
+
+// Menghitung faktorial
+// 3! = 3 x 2 x 1
+
+function faktorial(n) {
+    if (n == 1) {
+        return 1;
+    } else {
+        return n * faktorial(n - 1);
+    }
+}
+console.log(faktorial(3)); // 6
+
+// loop vs rekursif
+function faktorialFor(n) {
+    let hasil = 1;
+    for (let i = n; i >= 1; i--) {
+        hasil = hasil * i;
+        console.log(`${i} -- ini hasil i`);
+    }
+    return hasil;
+}
+
+console.log(faktorialFor(3));
+/*Output:
+3 -- ini hasil i
+2 -- ini hasil i
+1 -- ini hasil i
+6
+*/
+```
 
 ---
 
@@ -525,8 +825,89 @@ Method adalah function yang terdapat di dalam object
 
 # Module 8 - JS Intermediate - Web Storage
 
-Contoh:
+-   Ada beberapa cara untuk menyimpan data pengguna seperti pencarian, artikel berita, dan lain-lain ke lokal (browser) menggunakan web storage seperti cookies, local storage, dan session storage.
+-   Cookies adalah data kecil yang dikirim dari situs web dan disimpan di komputer kita oleh web browser saat kita menjelajah.
+-   Kekurangan cookies:
 
+    -   Setiap mengakses situs web, cookies juga kembali dikirim sehingga memperlambat aplikasi web dengan mengirimkan data yang sama.
+    -   Cookies disertakan pada setiap HTTP request, sehingga mengirimkan data yang tidak dienkripsi melalui internet, maka saat ingin menyimpan data dalam cookies harus mengenkripsinya terlebih dahulu.
+    -   Cookies hanya dapat menyimpan data sebanyak 4KB.
+    -   Lalu cookies juga memiliki tanggal kadaluarsa.
+
+-   Web storage digunakan untuk preferensi user, setting, score, posisi video
+-   Web storage jangan digunakan untuk data sensitif (username, password), otentikasi
+-   Karakteristik web storage:
+
+    -   Menyimpan data tanpa tanggal kadaluarsa.
+    -   Data tidak akan dihapus ketika web browser ditutup dan akan tersedia seterusnya selama tidak menghapus data local storage pada web browser.
+    -   Dapat menyimpan data hingga 5MB.
+    -   Hanya dapat menyimpan data string.
+
+-   Menyimpan data pada local storage, menggunakan method `setItem()` yang membutuhkan 2 parameter.
+
+    -   Parameter pertama adalah key yang ingin kita simpan
+    -   Parameter kedua adalah data (value) dari key yang akan disimpan.
+
+```javascript
+localStorage.setItem("key", value);
 ```
 
+Contoh:
+
+`index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            form {
+                display: flex;
+                flex-direction: row;
+            }
+
+            form input {
+                padding: 5px 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <input type="text" id="searchkey" name="searchkey" placeholder="Search Something" /><br />
+            <input type="submit" value="Search" onclick="onSearch()" />
+        </form>
+        <script></script>
+    </body>
+</html>
+```
+
+`script`
+
+```html
+<script>
+    let searchList = [];
+    function onSearch() {
+        let searchValue = document.getElementById("searchkey").value;
+        searchList.push(searchValue);
+        // memasukkan kata pencarian ke dalam array
+        // agar kata yang dicari bisa disimpan sebanyak mungkin
+
+        let searchListString = JSON.stringify(searchList);
+        // mengubah array menjadi string
+        // karna local storage hanya menyimpan data berupa string
+
+        localStorage.setItem("searchKey", searchListString);
+        // menyimpan pencarian dengan key 'searchKey'
+    }
+</script>
 ```
