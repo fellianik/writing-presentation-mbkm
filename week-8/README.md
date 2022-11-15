@@ -433,9 +433,11 @@ Cara penulisan testing:
 > Banyak test block akan di simpan ke dalam describe block
 
 Cara mengambil elemen:
+
 ![Cara mengambil elemen](./rtl-img.png)
 
 Macam-macam query dan hasilnya:
+
 ![Query dan hasil](./rtl-query-img.png)
 
 Contoh testing:
