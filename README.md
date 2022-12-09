@@ -13,3 +13,5 @@ Week 5 : 17 - 21 Oktober 2022 -> Group Project 1
 [Week 6 : 24 - 27 Oktober 2022](https://github.com/fellianik/writing-presentation-mbkm/tree/main/week-6)
 
 [Week 7 : 31 Oktober - 4 November 2022](https://github.com/fellianik/writing-presentation-mbkm/tree/main/week-7)
+
+[Week 8 : 7 - 11 November 2022](https://github.com/fellianik/writing-presentation-mbkm/tree/main/week-8)
